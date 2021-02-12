@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 use App\Models\vipcategory;
 
 class VipcategoryController extends Controller{
@@ -12,6 +13,7 @@ class VipcategoryController extends Controller{
         $data['contentHeader'] = "mdl";
         $data['btn'] = array('title' => 'Add VIP Category', 'url' => 'vipcategory/create', 'icon' => 'fas fa-plus');
         $data['vipcategory'] = vipcategory::all();
+        return view('bank.index',$data);
     }
 
  
