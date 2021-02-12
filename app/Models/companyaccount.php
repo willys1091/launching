@@ -9,4 +9,8 @@ class companyaccount extends Model{
     use HasFactory;
 
     protected $table = 'companyaccount';
+
+    public function bank(){
+        return $this->belongsTo('App\Models\bank','bank_id');
+    }
 }

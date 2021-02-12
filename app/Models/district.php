@@ -9,4 +9,8 @@ class district extends Model{
     use HasFactory;
 
     protected $table = 'district';
+
+    public function city(){
+        return $this->belongsTo('App\Models\city','city_id');
+    }
 }

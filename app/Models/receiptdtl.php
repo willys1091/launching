@@ -9,4 +9,12 @@ class receiptdtl extends Model{
     use HasFactory;
 
     protected $table = 'receiptdtl';
+
+    public function receipthdr(){
+        return $this->belongsTo('App\Models\receipthdr','receipthdr_id');
+    }
+
+    public function unit(){
+        return $this->belongsTo('App\Models\unit','unit_id');
+    }
 }

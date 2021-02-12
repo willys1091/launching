@@ -9,4 +9,8 @@ class officeagenttype extends Model{
     use HasFactory;
 
     protected $table = 'officeagenttype';
+
+    public function officeagent(){
+        return $this->hasMany('App\Models\officeagent');
+    }
 }

@@ -9,4 +9,8 @@ class agent extends Model{
     use HasFactory;
 
     protected $table = 'agent';
+
+    public function vippass(){
+        return $this->hasMany('App\Models\vippass');
+    }
 }

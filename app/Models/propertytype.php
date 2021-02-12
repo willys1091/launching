@@ -9,4 +9,8 @@ class propertytype extends Model{
     use HasFactory;
 
     protected $table = 'propertytype';
+
+    public function pricelist(){
+        return $this->hasMany('App\Models\pricelist');
+    }
 }

@@ -9,4 +9,8 @@ class admin extends Model{
     use HasFactory;
 
     protected $table = 'admin';
+
+    public function customerlock(){
+        return $this->hasMany('App\Models\customerlock');
+    }
 }
