@@ -8,6 +8,11 @@ use App\Models\city;
 class CityController extends Controller{
     public function index(){
         $data['title'] = "City | Launching";
+        $data['subtitle'] = "List of City";
+        $data['contentHeader'] = "mdl";
+        $data['btn'] = array('title' => 'Add City', 'url' => 'city/create', 'icon' => 'fas fa-plus');
+        $data['city'] = city::all();
+        return view('city.index',$data);
     }
 
  

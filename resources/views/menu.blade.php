@@ -131,7 +131,7 @@
                     </ul>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('distict')}}">
+                            <a class="nav-main-link" href="{{url('district')}}">
                                 <span class="nav-main-link-name">District</span>
                             </a>
                         </li>

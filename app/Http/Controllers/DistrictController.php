@@ -8,6 +8,11 @@ use App\Models\district;
 class DistrictController extends Controller{
     public function index(){
         $data['title'] = "District | Launching";
+        $data['subtitle'] = "List of District";
+        $data['contentHeader'] = "mdl";
+        $data['btn'] = array('title' => 'Add District', 'url' => 'district/create', 'icon' => 'fas fa-plus');
+        $data['district'] = district::all();
+        return view('district.index',$data);
     }
 
  

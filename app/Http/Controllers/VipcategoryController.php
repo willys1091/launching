@@ -8,6 +8,10 @@ use App\Models\vipcategory;
 class VipcategoryController extends Controller{
     public function index(){
         $data['title'] = "VIP Category | Launching";
+        $data['subtitle'] = "List of VIP Category";
+        $data['contentHeader'] = "mdl";
+        $data['btn'] = array('title' => 'Add VIP Category', 'url' => 'vipcategory/create', 'icon' => 'fas fa-plus');
+        $data['vipcategory'] = vipcategory::all();
     }
 
  

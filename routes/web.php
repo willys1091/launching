@@ -24,6 +24,59 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', "MainController@dashboard");
     Route::get('home', 'MainController@home');
 
+// Bank route
+    Route::get('bank', "BankController@index");
+    Route::get('bank/create', "BankController@create");
+    Route::post('bank', "BankController@store");
+    Route::get('bank/{id}/edit', "BankController@edit");
+    Route::patch('bank/{id}', "BankController@update");
+    Route::post('bank/active', "BankController@show");
+    Route::get('bank/{id}/detail', "BankController@detail");
+
+// City route
+    Route::get('city', "CityController@index");
+    Route::get('city/create', "CityController@create");
+    Route::post('city', "CityController@store");
+    Route::get('city/{id}/edit', "CityController@edit");
+    Route::patch('city/{id}', "CityController@update");
+    Route::post('city/active', "CityController@show");
+    Route::get('city/{id}/detail', "CityController@detail");
+
+// District route
+    Route::get('district', "DistrictController@index");
+    Route::get('district/create', "DistrictController@create");
+    Route::post('district', "DistrictController@store");
+    Route::get('district/{id}/edit', "DistrictController@edit");
+    Route::patch('district/{id}', "DistrictController@update");
+    Route::post('district/active', "DistrictController@show");
+    Route::get('district/{id}/detail', "DistrictController@detail");
+
+// Province route
+    Route::get('province', "ProvinceController@index");
+    Route::get('province/create', "ProvinceController@create");
+    Route::post('province', "ProvinceController@store");
+    Route::get('province/{id}/edit', "ProvinceController@edit");
+    Route::patch('province/{id}', "ProvinceController@update");
+    Route::post('province/active', "ProvinceController@show");
+    Route::get('province/{id}/detail', "ProvinceController@detail");
+
+// VIP Category route
+    Route::get('vipcategory', "VipcategoryController@index");
+    Route::get('vipcategory/create', "VipcategoryController@create");
+    Route::post('vipcategory', "VipcategoryController@store");
+    Route::get('vipcategory/{id}/edit', "VipcategoryController@edit");
+    Route::patch('vipcategory/{id}', "VipcategoryController@update");
+    Route::post('vipcategory/active', "VipcategoryController@show");
+    Route::get('vipcategory/{id}/detail', "VipcategoryController@detail");
+
+// VIP Name route
+    Route::get('vipname', "VipnameController@index");
+    Route::get('vipname/create', "VipnameController@create");
+    Route::post('vipname', "VipnameController@store");
+    Route::get('vipname/{id}/edit', "VipnameController@edit");
+    Route::patch('vipname/{id}', "VipnameController@update");
+    Route::post('vipname/active', "VipnameController@show");
+    Route::get('vipname/{id}/detail', "VipnameController@detail");
 
 // people route
     Route::get('people', "PeopleController@index");

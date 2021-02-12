@@ -14,7 +14,7 @@ class vipcategory extends Model{
         return $this->belongsTo('App\Models\event','event_id');
     }
 
-    public function unitselection(){
-        return $this->hasMany('App\Models\unitselection');
+    public function vippass(){
+        return $this->hasMany('App\Models\vippass');
     }
 }

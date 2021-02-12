@@ -16,6 +16,7 @@ class CreateAdmin extends Migration{
             $table->string('password');
             $table->string('token')->nullable();
             $table->string('resetlink')->nullable();
+            $table->unsignedInteger('event_id')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
         });

@@ -8,6 +8,11 @@ use App\Models\province;
 class ProvinceController extends Controller{
     public function index(){
         $data['title'] = "Province | Launching";
+        $data['subtitle'] = "List of Province";
+        $data['contentHeader'] = "mdl";
+        $data['btn'] = array('title' => 'Add Province', 'url' => 'province/create', 'icon' => 'fas fa-plus');
+        $data['province'] = province::all();
+        return view('province.index',$data);
     }
 
  
