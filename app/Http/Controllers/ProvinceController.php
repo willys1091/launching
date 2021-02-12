@@ -42,7 +42,7 @@ class ProvinceController extends Controller{
 
     public function edit($id){
         $data['title'] = "Province | Launching";
-        $data['action'] = "add";
+        $data['action'] = "edit";
         $data['data'] = province::findorfail($id);
         return view('province.action',$data); 
     }

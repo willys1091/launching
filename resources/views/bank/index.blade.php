@@ -36,7 +36,6 @@
 @endsection
 
 @section ('headerScript')
-@livewireStyles
 <link rel="stylesheet" id="css-main" href="{{asset('public/js/plugins/datatables/dataTables.bootstrap4.css')}}">
 <link rel="stylesheet" id="css-main" href="{{asset('public/js/plugins/datatables/responsive.bootstrap4.min.css')}}">
 <link rel="stylesheet" id="css-main" href="{{asset('public/js/plugins/select2/css/select2.min.css')}}">
@@ -44,8 +43,6 @@
 @endsection
 
 @section ('footerScript')
-@livewireScripts
-<script> Livewire.restart();</script>
 <script src="{{asset('public/js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('public/js/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
