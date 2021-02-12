@@ -10,10 +10,8 @@ use App\Models\marketplace;
 use App\Models\product;
 use Exception;
 
-trait GeneralTrait
-{
-    public function timezone()
-    {
+trait GeneralTrait{
+    public function timezone(){
         return date_default_timezone_set(config::where('name', 'timezone')->value('value') ?? "Asia/Jakarta");
     }
 
@@ -21,7 +19,7 @@ trait GeneralTrait
     {
         $ip =  \Request::ip();
         $description = $modul . " " . $action . " - ID:" . $id;
-        DB::table('systemlog')->insert(['user_id' => Session::get('id') ?? $id, 'ipaddress' => $ip, 'description' => $description, 'timestamp' => now()]);
+        DB::table('systemlog')->insert(['admin_id' => Session::get('id') ?? $id, 'ipaddress' => $ip, 'description' => $description, 'timestamp' => now()]);
     }
 
     public function charOnly($replace, $string)

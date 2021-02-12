@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
-use App\Models\users;
+use App\Models\admin;
 use App\Models\company;
 
 class MainController extends Controller{
@@ -15,12 +15,8 @@ class MainController extends Controller{
         $this->timezone();
     }
 
-    public function home(){
-        echo "ini adalah home";
-    }
-
     public function index($msg = null){
-        $data['title'] = "Login | Siapfulin";
+        $data['title'] = "Login | Launching";
         if (Session::has('id')) {
             return redirect('dashboard');
         } else {
@@ -29,7 +25,7 @@ class MainController extends Controller{
     }
 
     public function auth(Request $request){
-        $user = users::where(['email' => $request->email, 'password' => sha1($request->password)]);
+        $user = admin::where(['email' => $request->email, 'password' => sha1($request->password)]);
         if ($user->count() > 0) {
             $data = $user->first();
             $ses = array(
@@ -38,9 +34,6 @@ class MainController extends Controller{
                 'password' => $data->password,
                 'name' => $data->name,
                 'roleid' => $data->role_id,
-                'companyid' => $data->company_id,
-                'companyname' => $data->company->name,
-                'trial_expired' => $data->trial_expired,
                 'status' => $data->status,
                 'type' => $data->type,
             );
@@ -49,7 +42,7 @@ class MainController extends Controller{
             $enc_password = hash_hmac('sha256', $request->password, 'LemonGrass');
             $enc_combine = base64_encode(md5(hash_hmac('sha256', $request->email . $request->password, 'LemonGrass')));
             Session::put('token', base64_encode($enc_email . '/' . $enc_password . '/' . $enc_combine));
-            $user = users::findorfail(Session::get('id'));
+            $user = admin::findorfail(Session::get('id'));
             $user->token = Session::get('token');
             $user->save();
             $this->log_system('login', 'Admin Logged In', Session::get('id'));
@@ -62,17 +55,17 @@ class MainController extends Controller{
     }
 
     public function dashboard(){
-        $data['title'] = "Dashboard | Siapfulin";
+        $data['title'] = "Dashboard | Launching";
         return view('main.dashboard', $data);
     }
 
     public function forgot(){
-        $data['title'] = "Forgot Password | Siapfulin";
+        $data['title'] = "Forgot Password | Launching";
         return view('main.forgot', $data);
     }
 
     public function register(){
-        $data['title'] = "Register | Siapfulin";
+        $data['title'] = "Register | Launching";
         return view('main.register', $data);
     }
 
@@ -100,7 +93,7 @@ class MainController extends Controller{
     }
 
     public function log($modul){
-        $data['title'] = ucwords($modul . ' Log')." | Siapfulin";
+        $data['title'] = ucwords($modul . ' Log')." | Launching";
         $data['log'] = (($modul == 'system') ? DB::table('systemlog')->select('systemlog.id', 'systemlog.ipaddress', 'systemlog.description', 'systemlog.timestamp', 'user.name', 'user.email')->join('user', 'systemlog.user_id', '=', 'user.id') : DB::table('emaillog')->select('emaillog.id', 'emaillog.to', 'emaillog.subject', 'emaillog.timestamp', 'user.name', 'user.email')->join('user', 'emaillog.user_id', '=', 'user.id'))->get();
         $data['contentHeader'] = "bc";
         $bc[] = array('title' => 'Log', 'url' => '#', 'active' => '0');
@@ -110,7 +103,7 @@ class MainController extends Controller{
     }
 
     public function helps(){
-        $data['title'] = "Helps  | Siapfulin";
+        $data['title'] = "Helps  | Launching";
         return view ('main.helps',$data);
     }
 

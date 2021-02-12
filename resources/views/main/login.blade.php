@@ -6,7 +6,7 @@
             <div class="col-md-8 col-lg-6 col-xl-4">
                 <div class="block block-rounded block-themed mb-0">
                     <div class="block-header bg-primary-dark">
-                        <h3 class="block-title">Siapfulin</h3>
+                        <h3 class="block-title">Launching</h3>
                     </div>
                     <div class="block-content">
                         <div class="p-sm-3 px-lg-4 py-lg-3">
