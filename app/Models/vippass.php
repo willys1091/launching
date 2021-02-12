@@ -30,7 +30,6 @@ class vippass extends Model{
         return $this->belongsTo('App\Models\paymentplan','paymentplan_id');
     }
 
-
     public function unitselection(){
         return $this->hasMany('App\Models\unitselection');
     }

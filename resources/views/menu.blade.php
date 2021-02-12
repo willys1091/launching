@@ -104,48 +104,48 @@
                     </ul>
                 </li>
 
-                <li class="nav-main-item {{request::segment(1)=='marketplace'?"open":""}}">
+                <li class="nav-main-item {{request::segment(1)=='bank'||request::segment(1)=='province'||request::segment(1)=='city'||request::segment(1)=='district'||request::segment(1)=='vipcategory'||request::segment(1)=='vipname'?"open":""}}">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                         <i class="nav-main-link-icon fa fa-cubes"></i><span class="nav-main-link-name">Attribute</span>
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('bank')}}">
+                            <a class="nav-main-link {{request::segment(1)=='bank'?"active":""}}" href="{{url('bank')}}">
                                 <span class="nav-main-link-name">Bank</span>
                             </a>
                         </li>
                     </ul>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('province')}}">
+                            <a class="nav-main-link {{request::segment(1)=='province'?"active":""}}" href="{{url('province')}}">
                                 <span class="nav-main-link-name">Province</span>
                             </a>
                         </li>
                     </ul>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('city')}}">
+                            <a class="nav-main-link {{request::segment(1)=='city'?"active":""}}" href="{{url('city')}}">
                                 <span class="nav-main-link-name">City</span>
                             </a>
                         </li>
                     </ul>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('district')}}">
+                            <a class="nav-main-link {{request::segment(1)=='district'?"active":""}}" href="{{url('district')}}">
                                 <span class="nav-main-link-name">District</span>
                             </a>
                         </li>
                     </ul>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('vipcategory')}}">
+                            <a class="nav-main-link {{request::segment(1)=='vipcategory'?"active":""}}" href="{{url('vipcategory')}}">
                                 <span class="nav-main-link-name">VIP Category</span>
                             </a>
                         </li>
                     </ul>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('vipname')}}">
+                            <a class="nav-main-link {{request::segment(1)=='vipname'?"active":""}}" href="{{url('vipname')}}">
                                 <span class="nav-main-link-name">VIP Name</span>
                             </a>
                         </li>
