@@ -13,4 +13,8 @@ class propertytype extends Model{
     public function pricelist(){
         return $this->hasMany('App\Models\pricelist');
     }
+
+    public function unit(){
+        return $this->hasMany('App\Models\unit');
+    }
 }

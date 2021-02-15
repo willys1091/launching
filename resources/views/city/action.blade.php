@@ -10,12 +10,11 @@
         @else
         <form action="{{url('city/'.$data->id)}}" method="post"> @method('patch')
     @endif @csrf
-        <input type="hidden" class="action" value="{{$action}}"/>
         <div class="block-content font-size-sm">
             <div class="row">
                 <div class="col-lg-10">
                     <div class="form-group">
-                        <label for="province">Name <span class="text-danger">*</span></label>
+                        <label for="province">Province <span class="text-danger">*</span></label>
                         <select class="js-select2 form-control" name="province" style="width: 100%;" data-placeholder="Choose one..">
                             <option></option>
                             @foreach($province as $p)

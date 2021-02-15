@@ -10,7 +10,6 @@
         @else
         <form action="{{url('bank/'.$data->id)}}" method="post"> @method('patch')
     @endif @csrf
-        <input type="hidden" class="action" value="{{$action}}"/>
         <div class="block-content font-size-sm">
             <div class="row">
                 <div class="col-lg-10">
