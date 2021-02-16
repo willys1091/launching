@@ -8,34 +8,32 @@
                     <tr>
                         <th class="text-center">ID</th>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Company</th>
-                        <th>Status</th>
-                        {!!Session('type')=='admin'?'<th>Type</th><th>Role</th>':''!!}
+                        {!!Session('type')=='admin'?'<th>Event</th>':''!!}
+                        <th>Refunable</th>
+                        <th>Qty</th>
+                        <th>NUP Fee</th>
+                        <th>Last No</th>
+                        
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @php $x=1 @endphp
-                    @foreach($user as $u)
-                    <tr>
+                    @foreach($vipcategory as $vc)
+                     <tr>
                         <td class="text-center font-size-sm">{{$x}}</td>
-                        <td class="d-sm-table-cell font-size-sm font-w600"><a href="{{url('people/'.$u->id.'/detail')}}">{{ucwords($u->name)}}</a></td>
-                        <td class="d-sm-table-cell font-size-sm">{{$u->email}}</td>
-                        <td class="{{$u->company_id<>''?'d-sm-table-cell font-size-sm font-w600':''}}">{!!$u->company_id <>''?'<a href="#">'.ucwords($u->company->name).'</a>':'<em class="text-muted font-size-sm">None</em>'!!}</td>
-                        <td class="d-sm-table-cell font-size-sm"><span class="badge badge-{{$u->status=='trial'?'danger':'success'}}">{{ucwords($u->status)}}</span> {!!$u->expired_date<>''?'<br><em class="text-muted">'.$GeneralTrait->smartDatefuture(strtotime($u->expired_date)).'</em>':''!!}</td>
-                        @if(Session('type')=='admin')
-                            <td class="d-sm-table-cell font-size-sm"> <span class="badge badge-{{$u->type=='admin'?'primary':'warning'}}">{{ucwords($u->type)}}</span></td>
-                            <td class="d-sm-table-cell font-size-sm font-w600">{!!$u->role_id<>''?'<a href="'.url("role").'">'.ucwords($u->role->name).'</a>':'<em class="text-muted font-size-sm">None</em>'!!}</td>
-                        @endif
+                        {!!Session('type')=='admin'?'<td class="d-sm-table-cell font-size-sm ">'.$vc->event->name.'</td>':''!!}
+                        <td class="d-sm-table-cell font-size-sm">{{$vc->qty}}</td>
+                        <td class="d-sm-table-cell font-size-sm">{{$vc->qty}}</td>
+                        <td class="d-sm-table-cell font-size-sm">{{$vc->nupfee}}</td>
+                        <td class="d-sm-table-cell font-size-sm">{{$vc->lastno}}</td>
                         <td class="text-center">
                             <div class="btn-group">
-                                @livewire('active', ['status' => $u->active,'modul'=>'user','key'=> $u->id])
-                                <a onClick='showM("{{url('people/'.$u->id.'/edit')}}");return false' type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit"><i class="fas fa-fw fa-pencil-alt"></i></a>
-                                <a href="{{url('people/'.$u->id.'/detail')}}" type="button" class="btn btn-sm btn-warning" data-toggle="tooltip" title="Manage"><i class="fas fa-tasks"></i></a>
+                                @livewire('active', ['status' => $vc->active,'modul'=>'user','key'=> $u->id])
+                                <a onClick='showM("{{url('vipcategory/'.$vc->id.'/edit')}}");return false' type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit"><i class="fas fa-fw fa-pencil-alt"></i></a>
                             </div>
                         </td>
-                    </tr>   
+                    </tr>    
                     @php $x++ @endphp
                     @endforeach
                 </tbody>

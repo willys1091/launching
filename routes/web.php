@@ -24,6 +24,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', "MainController@dashboard");
     Route::get('home', 'MainController@home');
 
+// event route
+    Route::get('event', "EventController@index");
+    Route::get('event/create', "EventController@create");
+    Route::post('event', "EventController@store");
+    Route::get('event/{id}/edit', "EventController@edit");
+    Route::patch('event/{id}', "EventController@update");
+    Route::post('event/active', "EventController@show");
+    Route::get('event/{id}/detail', "EventController@detail");
+
 // Bank route
     Route::get('bank', "BankController@index");
     Route::get('bank/create', "BankController@create");

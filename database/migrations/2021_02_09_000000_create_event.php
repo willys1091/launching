@@ -9,7 +9,7 @@ class CreateEvent extends Migration{
         Schema::create('event', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('active')->default();
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

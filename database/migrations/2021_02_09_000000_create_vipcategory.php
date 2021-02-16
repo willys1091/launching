@@ -16,7 +16,7 @@ class CreateVipcategory extends Migration{
             $table->integer('lastno');
             $table->string('descs')->nullable();
             $table->string('color');
-            $table->boolean('active');
+            $table->boolean('active')->default('1');
             $table->timestamps();
         });
     }

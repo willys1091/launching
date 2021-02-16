@@ -19,30 +19,30 @@
                     </a>
                 </li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link {{request::segment(1)=='integration'?"active":""}}"href="{{url('integration')}}">
+                    <a class="nav-main-link {{request::segment(1)=='Diagramatric'?"active":""}}"href="{{url('Diagramatric')}}">
                         <i class="nav-main-link-icon fal fa-chart-scatter"></i><span class="nav-main-link-name">Diagramatric</span>
                     </a>
                 </li>
                 
                 <li class="nav-main-item">
-                    <a class="nav-main-link {{request::segment(1)=='integration'?"active":""}}"href="{{url('integration')}}">
+                    <a class="nav-main-link {{request::segment(1)=='event'?"active":""}}"href="{{url('event')}}">
                         <i class="nav-main-link-icon fal fa-calendar-star"></i><span class="nav-main-link-name">event</span>
                     </a>
                 </li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link {{request::segment(1)=='integration'?"active":""}}"href="{{url('integration')}}">
+                    <a class="nav-main-link {{request::segment(1)=='agent'?"active":""}}"href="{{url('agent')}}">
                         <i class="nav-main-link-icon fa fa-user-secret"></i><span class="nav-main-link-name">Agent</span>
                     </a>
                 </li>
 
                 <li class="nav-main-item">
-                    <a class="nav-main-link {{request::segment(1)=='integration'?"active":""}}"href="{{url('integration')}}">
+                    <a class="nav-main-link {{request::segment(1)=='customer'?"active":""}}"href="{{url('customer')}}">
                         <i class="nav-main-link-icon fa fa-user"></i><span class="nav-main-link-name">Customer</span>
                     </a>
                 </li>
 
                 <li class="nav-main-item">
-                    <a class="nav-main-link {{request::segment(1)=='integration'?"active":""}}"href="{{url('integration')}}">
+                    <a class="nav-main-link {{request::segment(1)=='nup'?"active":""}}"href="{{url('nup')}}">
                         <i class="nav-main-link-icon fa fa-landmark"></i><span class="nav-main-link-name">NUP</span>
                     </a>
                 </li>
