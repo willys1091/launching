@@ -26,19 +26,19 @@ class VipcategoryController extends Controller{
     }
 
     public function store(Request $request){
-        // $data = new vipcategory;
-        // $data->name = $request->;
-        // $data->event_id = $request->;
-        // $data->refundable = $request->;
-        // $data->qty = $request->;
-        // $data->nupfee = $request->;
-        // $data->lastno = $request->;
-        // $data->desc = $request->;
-        // $data->color = $request->;
-        // $data->save();
-        // session::flash('error','success');
-        // session::flash('message','Add Vip Category Successfull');
-        // return redirect('vipcategory');
+        $data = new vipcategory;
+        $data->name = $request->name;
+        $data->event_id = $request->eventid;
+        $data->refundable = $request->refundable?'1':'0';
+        $data->qty = $request->qty;
+        $data->nupfee = $request->nupfee;
+        $data->lastno = $request->lastno??'0';
+        $data->descs = $request->desc;
+        $data->color = $request->color;
+        $data->save();
+        session::flash('error','success');
+        session::flash('message','Add Vip Category Successfull');
+        return redirect('vipcategory');
     }
 
     public function show($id){
@@ -48,24 +48,25 @@ class VipcategoryController extends Controller{
     public function edit($id){
         $data['title'] = "VIP Category | Launching";
         $data['action'] = "edit";
+        $data['event'] = event::where('active',1)->get();
         $data['data'] = vipcategory::findorfail($id);
         return view('vipcategory.action',$data); 
     }
 
     public function update(Request $request, $id){
-        // $data = vipcategory::findorfail($id);
-        // $data->name = $request->;
-        // $data->event_id = $request->;
-        // $data->refundable = $request->;
-        // $data->qty = $request->;
-        // $data->nupfee = $request->;
-        // $data->lastno = $request->;
-        // $data->desc = $request->;
-        // $data->color = $request->;
-        // $data->save();
-        // session::flash('error','success');
-        // session::flash('message','Add Vip Category Successfull');
-        // return redirect('vipcategory');
+        $data = vipcategory::findorfail($id);
+        $data->name = $request->name;
+        $data->event_id = $request->eventid;
+        $data->refundable = $request->refundable?'1':'0';
+        $data->qty = $request->qty;
+        $data->nupfee = $request->nupfee;
+        $data->lastno = $request->lastno??'0';
+        $data->descs = $request->desc;
+        $data->color = $request->color;
+        $data->save();
+        session::flash('error','success');
+        session::flash('message','Add Vip Category Successfull');
+        return redirect('vipcategory');
     }
 
     public function destroy($id){

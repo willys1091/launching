@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\event;
+use App\Models\vipcategory;
 
 class Active extends Component{
     public $status,$status2,$modul,$key;
@@ -19,6 +20,8 @@ class Active extends Component{
         $this->status = $status2;
         if($modul == "event"){
             $data = event::findorfail($key);
+        }elseif($modul == "vipcategory"){
+            $data = vipcategory::findorfail($key);    
         }
 
         $data->active = $status2;
